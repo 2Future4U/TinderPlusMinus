@@ -11,20 +11,21 @@ MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame: CGRectZero];
 UISlider *volumeViewSlider = nil;
 bool isChanging = false;
 
+//override existing function by writing them here
+//all other functions still exist even though they aren't written
 - (void)viewDidLoad {
 	%orig;
 	
 	//show an alert cause we can
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tinder+-"
-                        						    message:@"Use up volume to like, down volume to pass... or keep holding one down to have some fun ;)"
-                         						   delegate:self
-                         				  cancelButtonTitle:@"Dismiss"
-                         				  otherButtonTitles:nil];
+    	message:@"Use up volume to like, down volume to pass... or keep holding one down to have some fun ;)"
+        delegate:self
+        cancelButtonTitle:@"Dismiss"
+        otherButtonTitles:nil];
 	[alert show];
 	[alert release];
-
 	
-	//disable HUD displaying by setting custom volume view frame to 0
+	//disable HUD displaying using custom view (preset frame to CGRectZero ^)
 	UIView *hudview = [(UIViewController *)self view];
 	[hudview addSubview:volumeView];
 
@@ -54,19 +55,16 @@ bool isChanging = false;
 
 	isChanging = true;
 	if (volumeViewSlider.value > 0.5) {
+		//swipe right function
 		[self performSelector:@selector(notifyInteractionHandlerOfTapRight)];
 		volumeViewSlider.value = 0.5;
-
 	}
 	else if (volumeViewSlider.value < 0.5){
+		//swipe left function
 		[self performSelector:@selector(notifyInteractionHandlerOfTapLeft)];
 		volumeViewSlider.value = 0.5;
 	}
-	isChanging = false;
-
-
-		
+	isChanging = false;		
 }
 
 %end
-
