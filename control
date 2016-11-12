@@ -1,9 +1,10 @@
 Package: com.lucasjay.tinderplusminus
 Name: Tinder+-
 Depends: mobilesubstrate
-Version: 0.0.2
+Version: 0.0.3
 Architecture: iphoneos-arm
-Description: Like and Pass with volume buttons!
+Description: Like and Pass with volume buttons! Hit me up on twitter if you have any questions @neoneggplant
 Maintainer: Lucas Jackson <lucasjackson5815@gmail.com>
 Author: Lucas Jackson <lucasjackson5815@gmail.com>
+Homepage: http://lucasjackson.me/index.php/TinderPlusMinus
 Section: Tweaks
